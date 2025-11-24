@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import womenImage from "@/assets/women-empowerment.jpg";
-import elderlyImage from "@/assets/elderly-support.jpg";
-import stemImage from "@/assets/stem-workshop.jpg";
+import womenImage from "@/assets/indian-women-empowerment.jpg";
+import elderlyImage from "@/assets/indian-elderly-support.jpg";
+import stemImage from "@/assets/indian-stem-workshop.jpg";
+import generalWelfareImage from "@/assets/indian-general-welfare.jpg";
 
 const objectives = [
   {
@@ -29,7 +30,7 @@ const objectives = [
     title: "General Social Welfare",
     icon: "🌍",
     description: "Comprehensive initiatives in education, healthcare, environmental conservation, and disaster relief for community wellbeing.",
-    image: null,
+    image: generalWelfareImage,
     color: "bg-muted border-border",
   },
 ];
