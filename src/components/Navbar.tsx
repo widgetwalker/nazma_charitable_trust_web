@@ -1,0 +1,131 @@
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Objectives", href: "#objectives" },
+  { label: "Governance", href: "#governance" },
+  { label: "Programs", href: "#programs" },
+  { label: "Finance", href: "#finance" },
+  { label: "Get Involved", href: "#involved" },
+  { label: "Contact", href: "#contact" },
+];
+
+export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  return (
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-smooth",
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md shadow-soft"
+          : "bg-transparent"
+      )}
+    >
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <button
+            onClick={() => scrollToSection("#home")}
+            className="font-display text-xl md:text-2xl font-bold text-primary hover:opacity-80 transition-smooth"
+          >
+            Nazma Trust
+          </button>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-6">
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+                className="text-sm font-medium text-foreground hover:text-primary transition-smooth"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Button
+              variant="cta"
+              size="default"
+              onClick={() => scrollToSection("#involved")}
+            >
+              Get Involved
+            </Button>
+            <Button
+              variant="hero"
+              size="default"
+              onClick={() => scrollToSection("#involved")}
+            >
+              Donate
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 text-foreground hover:text-primary transition-smooth"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden mt-4 pb-4 space-y-3 animate-in fade-in slide-in-from-top-2">
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+                className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-smooth"
+              >
+                {item.label}
+              </button>
+            ))}
+            <div className="flex flex-col gap-2 px-4 pt-2">
+              <Button
+                variant="cta"
+                size="default"
+                onClick={() => scrollToSection("#involved")}
+                className="w-full"
+              >
+                Get Involved
+              </Button>
+              <Button
+                variant="hero"
+                size="default"
+                onClick={() => scrollToSection("#involved")}
+                className="w-full"
+              >
+                Donate
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
