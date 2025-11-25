@@ -22,7 +22,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto px-4 relative z-10 text-center pt-20">
         <div className="max-w-4xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
             Empowering Women,{" "}
