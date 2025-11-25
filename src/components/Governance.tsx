@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Linkedin } from "lucide-react";
 import kaosarImage from "@/assets/kaosar-ahmed.png";
 import imranaImage from "@/assets/imrana-begum.jpg";
 
@@ -9,6 +10,7 @@ const trustees = [
     role: "Founder & Trustee",
     bio: "Visionary founder dedicated to social development and community empowerment with years of experience in nonprofit leadership.",
     image: kaosarImage,
+    linkedin: "https://www.linkedin.com/in/kaosar-ahmed-31bba0223",
   },
   {
     name: "Imrana Begum",
@@ -69,6 +71,19 @@ export const Governance = () => {
                 <p className="text-muted-foreground text-center leading-relaxed">
                   {trustee.bio}
                 </p>
+                {trustee.linkedin && (
+                  <div className="mt-4 flex justify-center">
+                    <a
+                      href={trustee.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-smooth"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                      <span className="text-sm">LinkedIn Profile</span>
+                    </a>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}

@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { HandHeart, Users, Heart } from "lucide-react";
+import qrCode from "@/assets/phonepe-qr.jpg";
 
 export const GetInvolved = () => {
+  const [showQrDialog, setShowQrDialog] = useState(false);
+  
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
@@ -76,7 +81,11 @@ export const GetInvolved = () => {
               <p className="text-muted-foreground">
                 Your contribution directly supports our programs and helps us expand our reach to more communities.
               </p>
-              <Button variant="cta" className="w-full" onClick={scrollToContact}>
+              <Button 
+                variant="cta" 
+                className="w-full" 
+                onClick={() => setShowQrDialog(true)}
+              >
                 Donate Now
               </Button>
             </CardContent>
@@ -96,6 +105,25 @@ export const GetInvolved = () => {
           </Card>
         </div>
       </div>
+
+      {/* QR Code Dialog */}
+      <Dialog open={showQrDialog} onOpenChange={setShowQrDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="font-display text-2xl">Donate via PhonePe</DialogTitle>
+            <DialogDescription>
+              Scan the QR code below using your PhonePe app to make a donation
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center p-6">
+            <img 
+              src={qrCode} 
+              alt="PhonePe QR Code for Kaosar Ahmed Choudhury" 
+              className="w-full max-w-sm rounded-lg shadow-card"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

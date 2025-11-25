@@ -82,10 +82,10 @@ export const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
                     <a
-                      href="mailto:contact@nazmatrust.org"
+                      href="mailto:kaosar123ahmen@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-smooth"
                     >
-                      contact@nazmatrust.org
+                      kaosar123ahmen@gmail.com
                     </a>
                   </div>
                 </div>
@@ -96,12 +96,26 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <a
-                      href="tel:+91XXXXXXXXXX"
-                      className="text-muted-foreground hover:text-primary transition-smooth"
-                    >
-                      +91-XXXX-XXXXXX
-                    </a>
+                    <div className="space-y-2">
+                      <div>
+                        <p className="text-sm text-muted-foreground/80">Imrana Begum</p>
+                        <a
+                          href="tel:+917628082911"
+                          className="text-muted-foreground hover:text-primary transition-smooth"
+                        >
+                          7628082911
+                        </a>
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground/80">Kaosar Ahmed</p>
+                        <a
+                          href="tel:+919077349228"
+                          className="text-muted-foreground hover:text-primary transition-smooth"
+                        >
+                          +91 90773 49228
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
