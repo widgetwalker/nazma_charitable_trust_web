@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/nazma-trust-logo.png";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -74,9 +75,10 @@ export const Navbar = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("#home")}
-            className="font-display text-xl md:text-2xl font-bold text-primary hover:opacity-80 transition-smooth"
+            className="flex items-center gap-2 font-display text-xl md:text-2xl font-bold text-primary hover:opacity-80 transition-smooth"
           >
-            Nazma Trust
+            <img src={logo} alt="Nazma Trust Logo" className="w-8 h-8 md:w-10 md:h-10" />
+            <span>Nazma Trust</span>
           </button>
 
           {/* Desktop Navigation */}
