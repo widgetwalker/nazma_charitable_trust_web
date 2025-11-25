@@ -1,16 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import kaosarImage from "@/assets/kaosar-ahmed.png";
+import imranaImage from "@/assets/imrana-begum.jpg";
 
 const trustees = [
   {
     name: "Kaosar Ahmed",
     role: "Founder & Trustee",
     bio: "Visionary founder dedicated to social development and community empowerment with years of experience in nonprofit leadership.",
+    image: kaosarImage,
   },
   {
     name: "Imrana Begum",
-    role: "Trustee",
+    role: "Chairman",
     bio: "Passionate advocate for women's rights and education, bringing extensive knowledge in community development and social welfare.",
+    image: imranaImage,
   },
   {
     name: "Farhana Begum",
@@ -39,9 +43,19 @@ export const Governance = () => {
               className="shadow-card hover:shadow-medium transition-smooth border-border/50"
             >
               <CardHeader>
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-3xl font-bold">
-                  {trustee.name.charAt(0)}
-                </div>
+                {trustee.image ? (
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary/20">
+                    <img
+                      src={trustee.image}
+                      alt={trustee.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-3xl font-bold">
+                    {trustee.name.charAt(0)}
+                  </div>
+                )}
                 <CardTitle className="text-center">
                   <div className="font-display text-xl font-semibold">
                     {trustee.name}
