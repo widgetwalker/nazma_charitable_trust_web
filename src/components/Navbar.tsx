@@ -135,9 +135,17 @@ export const Navbar = () => {
           </div>
         </div>
 
+        {/* Mobile Menu Backdrop */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 lg:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 space-y-3 animate-in fade-in slide-in-from-top-2">
+          <div className="lg:hidden mt-4 pb-4 space-y-3 animate-in fade-in slide-in-from-top-2 relative z-50 bg-background rounded-lg shadow-medium">
             {navItems.map((item) => (
               <button
                 key={item.href}
