@@ -1,8 +1,28 @@
-NAZMA_CHARITABLE_TRUST  WEB APPLICATION
-A modern, responsive web application built with React and TypeScript.
+NAZMA_CHARITABLE_TRUST WEB APPLICATION
+
+A modern, full-stack web application built with React, TypeScript, and Supabase for Nazma Social Development Trust.
+
+**Developer:** [widgetwalker](https://github.com/widgetwalker)  
+**Repository:** [nazma_charitable_trust_web](https://github.com/widgetwalker/nazma_charitable_trust_web)
+
+---
+
+## 🌟 Features
+
+- **Complete Backend Infrastructure** with Supabase (PostgreSQL)
+- **11 Database Tables** for programs, donations, volunteers, trustees, and more
+- **Row Level Security (RLS)** for data protection
+- **25+ React Query Hooks** for seamless API integration
+- **TypeScript** for type safety
+- **Modern UI** with shadcn/ui components
+- **Responsive Design** mobile-first approach
+- **Automated Features** including receipt generation, spam detection, and analytics
+
+---
 
 🚀 Getting Started
-Prerequisites
+
+### Prerequisites
 Make sure you have Node.js and npm installed on your machine. If not, you can install with nvm.
 
 Installation & Development
@@ -79,3 +99,29 @@ The optimized production build will be created in the dist directory, ready to d
 ├── public/        # Static assets
 ├── dist/          # Production build (generated)
 └── package.json   # Project dependencies
+
+---
+
+## 👨‍💻 Author
+
+**Developer:** widgetwalker  
+**GitHub:** [@widgetwalker](https://github.com/widgetwalker)  
+**Email:** widgetwalker000@gmail.com
+
+---
+
+## 📄 License
+
+This project is developed for Nazma Social Development Trust.
+
+---
+
+## 🙏 Acknowledgments
+
+- Nazma Social Development Trust
+- Founder: Kaosar Ahmed
+- Trustees: Imrana Begum, Farhana Begum
+
+---
+
+**Made with ❤️ by widgetwalker**
