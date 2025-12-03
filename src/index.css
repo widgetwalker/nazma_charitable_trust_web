@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base Colors - Warm, trustworthy palette */
+    --background: 30 20% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    /* Primary - Warm Coral (empowerment, compassion) */
+    --primary: 15 85% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 15 75% 55%;
+
+    /* Secondary - Teal (trust, innovation, growth) */
+    --secondary: 180 65% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 180 60% 40%;
+
+    /* Accent - Warm Amber (optimism, warmth) */
+    --accent: 40 95% 55%;
+    --accent-foreground: 220 20% 15%;
+
+    /* Muted */
+    --muted: 30 15% 95%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 30 20% 88%;
+    --input: 30 20% 90%;
+    --ring: 15 85% 65%;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(15 85% 65%) 0%, hsl(180 65% 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(30 20% 98%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(220 20% 15% / 0.08);
+    --shadow-medium: 0 8px 30px -4px hsl(220 20% 15% / 0.12);
+    --shadow-card: 0 2px 12px -2px hsl(220 20% 15% / 0.06);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    /* Dark Mode Colors */
+    --background: 220 20% 12%;
+    --foreground: 30 20% 95%;
+
+    --card: 220 18% 16%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 220 18% 16%;
+    --popover-foreground: 30 20% 95%;
+
+    /* Primary - Slightly adjusted for dark mode */
+    --primary: 15 85% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 15 85% 75%;
+
+    /* Secondary - Brighter for dark mode */
+    --secondary: 180 65% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 180 65% 65%;
+
+    /* Accent - Adjusted for dark mode */
+    --accent: 40 95% 60%;
+    --accent-foreground: 220 20% 12%;
+
+    /* Muted */
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 65%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 15% 25%;
+    --input: 220 15% 22%;
+    --ring: 15 85% 65%;
+
+    /* Gradients - Adjusted for dark mode */
+    --gradient-hero: linear-gradient(135deg, hsl(15 85% 55%) 0%, hsl(180 65% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(220 18% 16%) 0%, hsl(220 20% 14%) 100%);
+
+    /* Shadows - More subtle in dark mode */
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
