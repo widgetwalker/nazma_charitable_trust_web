@@ -6,7 +6,6 @@ A modern, full-stack web application built with React, TypeScript, and Supabase 
 **Repository:** [nazma_charitable_trust_web](https://github.com/widgetwalker/nazma_charitable_trust_web)
 
 ---
-
 ## 🌟 Features
 
 - **Complete Backend Infrastructure** with Supabase (PostgreSQL)
